@@ -10,7 +10,7 @@ import {
   Location,
   Avatar,
   Tag,
-} from './user.style';
+} from './UserItem.style';
 
 export const User = ({
   username,

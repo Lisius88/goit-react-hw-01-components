@@ -5,7 +5,7 @@ import {
   Content,
   Titles,
   Element,
-} from './Transactions.style';
+} from './TransactionsList.style';
 
 export const TransactionsList = ({ transactions }) => {
   return (

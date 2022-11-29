@@ -1,12 +1,12 @@
 import '../index.css';
 import user from './objects/user.json';
-// import stats from './objects/data.json';
-// import friends from './objects/friends.json';
-// import transactions from './objects/transactions.json';
-import { User } from './user/user';
-// import { Stats } from './Statistics/Statistics';
-// import { FriendsList } from './Friends/Friends.list';
-// import { TransactionsList } from './Transaction/Transactions';
+import stats from './objects/data.json';
+import friends from './objects/friends.json';
+import transactions from './objects/transactions.json';
+import { User } from './UserItem/UserItem';
+import { Stats } from './StatisticsList/StatisticsList';
+import { FriendsList } from './FriendsList/FriendsList';
+import { TransactionsList } from './TransactionsList/TransactionsList';
 
 export const App = () => {
   return (
@@ -19,11 +19,11 @@ export const App = () => {
         stats={user.stats}
       />
 
-      {/* <Stats stats={stats} title={'Upload Stats'} />
+      <Stats stats={stats} title={'Upload Stats'} />
 
       <FriendsList friends={friends} />
 
-      <TransactionsList transactions={transactions} /> */}
+      <TransactionsList transactions={transactions} />
     </div>
   );
 };
