@@ -5,7 +5,7 @@ import {
   Content,
   Titles,
   Element,
-} from './transactions.style';
+} from './Transactions.style';
 
 export const TransactionsList = ({ transactions }) => {
   return (
@@ -18,11 +18,11 @@ export const TransactionsList = ({ transactions }) => {
         </Element>
       </thead>
       <tbody>
-        {transactions.map(transaction => (
-          <Element key={transaction.id}>
-            <Content>{transaction.type}</Content>
-            <Content>{transaction.amount}</Content>
-            <Content>{transaction.currency}</Content>
+        {transactions.map(({ id, type, amount, currency }) => (
+          <Element key={id}>
+            <Content>{type}</Content>
+            <Content>{amount}</Content>
+            <Content>{currency}</Content>
           </Element>
         ))}
       </tbody>
@@ -33,5 +33,8 @@ export const TransactionsList = ({ transactions }) => {
 TransactionsList.propTypes = {
   transaction: PropTypes.arrayOf({
     id: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    amount: PropTypes.string.isRequired,
+    currency: PropTypes.string.isRequired,
   }),
 };

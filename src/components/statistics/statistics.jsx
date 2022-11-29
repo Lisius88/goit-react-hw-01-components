@@ -6,17 +6,17 @@ import {
   Label,
   Percentage,
   Statistics,
-} from './statistics.style';
+} from './Statistics.style';
 
-export const Stats = ({ title = 'Upload stats', stats }) => {
+export const Stats = ({ title, stats }) => {
   return (
     <Statistics>
-      <Title title={title}>{title}</Title>
+      {title && <Title>{title}</Title>}
       <List>
-        {stats.map(stat => (
-          <Item key={stat.id}>
-            <Label stat={stat.label}>{stat.label}</Label>
-            <Percentage>{stat.percentage}%</Percentage>
+        {stats.map(({ id, label, percentage }) => (
+          <Item key={id}>
+            <Label stat={label}>{label}</Label>
+            <Percentage>{percentage}%</Percentage>
           </Item>
         ))}
       </List>
@@ -25,6 +25,7 @@ export const Stats = ({ title = 'Upload stats', stats }) => {
 };
 
 Stats.propTypes = {
+  title: PropTypes.string.isRequired,
   stat: PropTypes.shape({
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
